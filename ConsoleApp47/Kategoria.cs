@@ -9,7 +9,7 @@ namespace _230905
         public string KategoriaNeve { get; set; }
         public int TulelokSzama { get; set; }
         public int EltuntekSzama { get; set; }
-
+        public int UtasokSzama => this.EltuntekSzama + this.TulelokSzama;
 
         public Kategoria(string beolvasottSor)
         {

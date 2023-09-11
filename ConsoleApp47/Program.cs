@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace titanic
@@ -25,7 +26,9 @@ namespace titanic
 
             Console.WriteLine($"2.Feladat: {kategoriak.Count}db");
 
-
+            var f3 = kategoriak.Sum(k => k.UtasokSzama);
+            Console.WriteLine($"3.Feladat: {f3}fő");
+            
             Console.ReadKey();
         }
     }
