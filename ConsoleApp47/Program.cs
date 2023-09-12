@@ -1,4 +1,4 @@
-﻿using KategoriaKlassz;
+﻿using _230905;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,11 +29,11 @@ namespace titanic
             var f3 = kategoriak.Sum(k => k.UtasokSzama);
             Console.WriteLine($"3.Feladat: {f3}fő");
 
-            Console.WriteLine("4.Feladat Kulcsszó:");
+            Console.Write("4.Feladat Kulcsszó:");
             string ksz = Console.ReadLine();
 
-            bool f4 = kategoriak.Any(k => k.KategoriaNeve.Contains(ksz));
-            Console.WriteLine($"\t{(f4 ? "Van" : "Nincs")} találat");
+            //bool f4 = kategoriak.Any(k => k.KategoriaNeve.Contains(ksz));
+            //Console.WriteLine($"\t{(f4 ? "Van" : "Nincs")} találat");
 
             int i = 0;
             while (i < kategoriak.Count() && !kategoriak[i].KategoriaNeve.Contains(ksz))
@@ -44,13 +44,33 @@ namespace titanic
             {
                 Console.WriteLine("\t van találat");
                 Console.WriteLine("5.Feladat:");
-
+                foreach (var k in kategoriak)
+                {
+                    if (k.KategoriaNeve.Contains(ksz))
+                    {
+                        Console.WriteLine("\t {0} {1}fő",k.KategoriaNeve,k.UtasokSzama);
+                    }
+                }
             }
             else
             {
                 Console.WriteLine("\t nincs találat");
             }
 
+            
+            List<string> meghaladta = new List<string>();
+            foreach (var k in kategoriak)
+            {
+                if (k.EltuntekSzama > k.UtasokSzama*.6)
+                {
+                    meghaladta.Add(k.KategoriaNeve);
+                }
+            }
+            Console.WriteLine("6.Feladat:");
+            foreach (var m in meghaladta)
+            {
+                Console.WriteLine($"\t {m}");
+            }
 
 
             Console.ReadKey();

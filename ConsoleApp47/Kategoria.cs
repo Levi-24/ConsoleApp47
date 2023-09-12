@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KategoriaKlassz
+namespace _230905
 {
     internal class Kategoria
     {
