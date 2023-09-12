@@ -42,7 +42,7 @@ namespace titanic
             }
             if (i < kategoriak.Count)
             {
-                Console.WriteLine("\t van találat");
+                Console.WriteLine("\t Van találat!");
                 Console.WriteLine("5.Feladat:");
                 foreach (var k in kategoriak)
                 {
@@ -54,7 +54,7 @@ namespace titanic
             }
             else
             {
-                Console.WriteLine("\t nincs találat");
+                Console.WriteLine("\t Nincs találat!");
             }
 
             
@@ -71,6 +71,16 @@ namespace titanic
             {
                 Console.WriteLine($"\t {m}");
             }
+
+            int maxi = 0;
+            for (int j = 1; j < kategoriak.Count; j++)
+            {
+                if (kategoriak[j].TulelokSzama > kategoriak[maxi].TulelokSzama)
+                {
+                    maxi = j;
+                }
+            }
+            Console.WriteLine($"7.Feladat: {kategoriak[maxi].KategoriaNeve}");
 
 
             Console.ReadKey();
