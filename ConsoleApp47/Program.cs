@@ -35,19 +35,21 @@ namespace titanic
             bool f4 = kategoriak.Any(k => k.KategoriaNeve.Contains(ksz));
             Console.WriteLine($"\t{(f4 ? "Van" : "Nincs")} találat");
 
-            //int i = 0;
-            //while (i < kategoriak.Count() && !kategoriak[i].KategoriaNeve.Contains(ksz))
-            //{
-            //    i++;
-            //}
-            //if (i <kategoriak.Count)
-            //{
-            //    Console.WriteLine("\t van találat");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("\t nincs találat");
-            //}
+            int i = 0;
+            while (i < kategoriak.Count() && !kategoriak[i].KategoriaNeve.Contains(ksz))
+            {
+                i++;
+            }
+            if (i < kategoriak.Count)
+            {
+                Console.WriteLine("\t van találat");
+                Console.WriteLine("5.Feladat:");
+
+            }
+            else
+            {
+                Console.WriteLine("\t nincs találat");
+            }
 
 
 
