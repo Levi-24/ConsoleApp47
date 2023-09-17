@@ -26,31 +26,17 @@ namespace titanic
             Console.Write("4.Feladat Kulcsszó:");
             string ksz = Console.ReadLine();
 
-            //bool f4 = kategoriak.Any(k => k.KategoriaNeve.Contains(ksz));
-            //Console.WriteLine($"\t{(f4 ? "Van" : "Nincs")} találat");
+            bool f4 = kategoriak.Any(k => k.KategoriaNeve.Contains(ksz));
+            Console.WriteLine($"\t{(f4 ? "Van" : "Nincs")} találat");
 
-            int i = 0;
-            while (i < kategoriak.Count() && !kategoriak[i].KategoriaNeve.Contains(ksz))
-            {
-                i++;
-            }
-            if (i < kategoriak.Count)
-            {
-                Console.WriteLine("\t Van találat!");
-                Console.WriteLine("5.Feladat:");
-                foreach (var k in kategoriak)
+            Console.WriteLine("5.Feladat:");
+            foreach (var k in kategoriak)
+            { 
+                if (k.KategoriaNeve.Contains(ksz))
                 {
-                    if (k.KategoriaNeve.Contains(ksz))
-                    {
-                        Console.WriteLine("\t {0} {1}fő",k.KategoriaNeve,k.UtasokSzama);
-                    }
+                    Console.WriteLine("\t {0} {1}fő",k.KategoriaNeve,k.UtasokSzama);
                 }
             }
-            else
-            {
-                Console.WriteLine("\t Nincs találat!");
-            }
-
             
             List<string> meghaladta = new List<string>();
             foreach (var k in kategoriak)
