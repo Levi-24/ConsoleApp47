@@ -23,7 +23,7 @@ namespace titanic
             var f3 = kategoriak.Sum(k => k.UtasokSzama);
             Console.WriteLine($"3.Feladat: {f3}fő");
 
-            Console.Write("4.Feladat Kulcsszó:");
+            Console.Write("4.Feladat kulcsszó:");
             string ksz = Console.ReadLine();
 
             bool f4 = kategoriak.Any(k => k.KategoriaNeve.Contains(ksz));
