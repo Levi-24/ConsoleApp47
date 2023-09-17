@@ -32,12 +32,10 @@ namespace titanic
             Console.WriteLine("5.Feladat:");
             foreach (var k in kategoriak)
             { 
-                if (k.KategoriaNeve.Contains(ksz))
-                {
-                    Console.WriteLine("\t {0} {1}fő",k.KategoriaNeve,k.UtasokSzama);
-                }
+                if (k.KategoriaNeve.Contains(ksz)) Console.WriteLine("\t {0} {1}fő",k.KategoriaNeve,k.UtasokSzama);
             }
-            
+
+            Console.WriteLine("6.Feladat:");
             List<string> meghaladta = new List<string>();
             foreach (var k in kategoriak)
             {
@@ -46,24 +44,21 @@ namespace titanic
                     meghaladta.Add(k.KategoriaNeve);
                 }
             }
-            Console.WriteLine("6.Feladat:");
+
             foreach (var m in meghaladta)
             {
                 Console.WriteLine($"\t {m}");
             }
 
-            int maxi = 0;
+            int max = 0;
             for (int j = 1; j < kategoriak.Count; j++)
             {
-                if (kategoriak[j].TulelokSzama > kategoriak[maxi].TulelokSzama)
+                if (kategoriak[j].TulelokSzama > kategoriak[max].TulelokSzama)
                 {
-                    maxi = j;
+                    max = j;
                 }
             }
-            Console.WriteLine($"7.Feladat: {kategoriak[maxi].KategoriaNeve}");
-
-
-            Console.ReadKey();
+            Console.WriteLine($"7.Feladat: {kategoriak[max].KategoriaNeve}");
         }
     }
 }
