@@ -16,13 +16,7 @@ namespace titanic
                 path: @"..\..\..\src\titanic.txt",
                 encoding: Encoding.UTF8);
 
-            while (!sr.EndOfStream)
-            {
-                //string sor = sr.ReadLine();
-                //Kategoria kat = new Kategoria(sor);
-                //kategoriak.Add(kat);
-                kategoriak.Add(new Kategoria(sr.ReadLine()));
-            }
+            while (!sr.EndOfStream) kategoriak.Add(new Kategoria(sr.ReadLine()));
 
             Console.WriteLine($"2.Feladat: {kategoriak.Count}db");
 
